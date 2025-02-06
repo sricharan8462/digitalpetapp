@@ -19,6 +19,9 @@ class _PetAppState extends State<PetApp> {
     'assets/pet4.jpeg',
     'assets/pet5.jpeg',
   ];
+
+  final List<String> petNames = ["Buddy", "Charlie", "Max", "Luna", "Milo"];
+
   int _currentImageIndex = 0;
 
   void _changePetImage() {
@@ -37,6 +40,11 @@ class _PetAppState extends State<PetApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(petImages[_currentImageIndex], height: 200),
+              const SizedBox(height: 10),
+              Text(
+                petNames[_currentImageIndex],
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _changePetImage,
